@@ -1,7 +1,7 @@
 @Library('slackNotification') _
 node {
     try {
-        notifyBuild('STARTED')
+        abcd('STARTED')
         def mavenHome = tool name: "Maven 3.8.5"
         properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
         echo "Build number is: ${env.BUILD_NUMBER}"
@@ -31,7 +31,7 @@ node {
         throw e
     }
     finally {
-        notifyBuild(currentBuild.result)
+        abcd(currentBuild.result)
     } 
 }
 
