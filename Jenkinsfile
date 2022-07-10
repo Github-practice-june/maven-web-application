@@ -16,7 +16,7 @@ pipeline {
         stage('getCodeGit') {
             steps {
                 git branch: 'development', credentialsId: 'd43640b0-f4a2-4e1b-a011-4e90de1f9e73', url: 'https://github.com/Github-practice-june/maven-web-application.git'
-                notifyBuild('STARTED')
+                slackNotification('STARTED')
             }
         }
         stage('Build') {
