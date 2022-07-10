@@ -1,3 +1,4 @@
+@Library('sendSlackNotifications') _
 pipeline {
     agent any
     tools {
